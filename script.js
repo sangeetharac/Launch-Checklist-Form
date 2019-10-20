@@ -8,13 +8,25 @@ window.addEventListener("load", function(){
       let  cargoMass = document.querySelector("input[name=cargoMass]");
       let faultyItems = document.getElementById("faultyItems");
       let launchStatus = document.getElementById("launchStatus");
-      
+      let alphaLetter = /^[a-zA-Z]+$/;
       if (pilotName.value === "" || copilotName.value === '' || fuelLevel.value === '' || cargoMass.value === ''){
       
          alert('All fields are required!');
          event.preventDefault()
          
      } 
+     else if (pilotName.value.match(alphaLetter) === null ) {
+      
+      alert('Pilot name must be Alphabetic');
+      event.preventDefault()
+      
+      }
+      else if (copilotName.value.match(alphaLetter) === null ) {
+      
+         alert('Co Pilot name must be Alphabetic');
+         event.preventDefault()
+         
+         }
      else if (isNaN(fuelLevel.value) === true ) {
       
       alert('Fule level must be numeric');
